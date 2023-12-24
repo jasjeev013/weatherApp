@@ -1,4 +1,4 @@
-import { cards,addToCart,addByDefault,deleteLast,resetcards} from "../Data/cards.js";
+import { cards,updatesCart,addByDefault,deleteLast,resetcards} from "../Data/cards.js";
 
 const apikey = "2ec773174354f87c17f24f022529afcd";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
@@ -10,7 +10,7 @@ function weathers(){
     async function checkWeather(city,index) {
         const response = await fetch(apiUrl + `&q=${city}&appid=${apikey}`);
         var data = await response.json();
-        addToCart(data,index);
+        updatesCart(data,index);
         updateHTML();
     
     }
@@ -34,14 +34,14 @@ function weathers(){
                 <button class="search"><img src="./Images/search.png" alt="" width="20px" height="18px"></button>
                 <img src="./Images/sunny.png" alt="Sunny" width="90px" height="90px" class="weather-img">
                 <div>
-                    <h1 class="temp">${cards[i].temp}</h1>
+                    <h1 class="temp">${cards[i].temp}°C </h1>
                     <h4 class="city">${cards[i].city}</h4>
                 </div>
                 <div class="extras">
                     <img src="./Images/humidity.png" alt="humidty" width="50px" height="50px" class="humid">
-                    <h3 class="humidText">${cards[i].humidty}</h3>
+                    <h3 class="humidText">${cards[i].humidty}%</h3>
                     <img src="./Images/windspeed.png" alt="windSpeed" width="60px" height="60px" class="windSpeed">
-                    <h3 class="windText">${cards[i].wind}</h3>
+                    <h3 class="windText">${cards[i].wind}km/h</h3>
                 </div>
             </div> `;
             html+=element; 

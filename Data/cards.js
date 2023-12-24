@@ -5,15 +5,15 @@ if(cards==null){
     cards = [{
         city:'Mumbai',
         weather: 'sunny',
-        temp: '22°C',
-        humidty:'50%',
-        wind:'15km/h'
+        temp: '22',
+        humidty:'50',
+        wind:'15'
     }];
 }
 
 
 
-export function addToCart(data,i){
+export function updatesCart(data,i){
     cards[i]={
         city: data.name,
         weather: data.weather[0].main,
@@ -29,9 +29,9 @@ export function addByDefault(){
     cards.push({
         city:'Mumbai',
         weather: 'sunny',
-        temp: '22°C',
-        humidty:'50%',
-        wind:'15km/h'
+        temp: '22',
+        humidty:'50',
+        wind:'15'
     });
     localStorage.setItem('cardz',JSON.stringify(cards));
 }
@@ -42,7 +42,13 @@ export function deleteLast(){
 }
 
 export function resetcards(){
-    cards=[];
+    cards = [{
+        city:'Mumbai',
+        weather: 'sunny',
+        temp: '22',
+        humidty:'50',
+        wind:'15'
+    }];
     localStorage.removeItem('cardz');
     
 
