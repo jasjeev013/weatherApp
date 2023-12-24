@@ -36,3 +36,15 @@ export function addByDefault(){
     localStorage.setItem('cardz',JSON.stringify(cards));
 }
 
+export function deleteLast(){
+    cards.splice(cards.length-1,1);
+    localStorage.setItem('cardz',JSON.stringify(cards));
+}
+
+export function resetcards(){
+    cards=[];
+    localStorage.removeItem('cardz');
+    
+
+}
+

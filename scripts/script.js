@@ -1,4 +1,4 @@
-import { cards,addToCart,addByDefault} from "../Data/cards.js";
+import { cards,addToCart,addByDefault,deleteLast,resetcards} from "../Data/cards.js";
 
 const apikey = "2ec773174354f87c17f24f022529afcd";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
@@ -21,7 +21,9 @@ function weathers(){
             if(i==cards.length){
                 let aele =`
                 <div class="add-more-but">
-                    <button  class="add-mor"><img src="./Images/plus.png" alt="more" width="100px" height="100px" class="add-more"></button> 
+                    <button  class="add-more"><img src="./Images/plus.png" alt="more" width="100px" height="100px" class="add-mor"></button> 
+                    <button  class="add-mor1"><img src="./Images/minus.png" alt="minus" width="100px" height="100px" class="add-mor"></button>
+                    <button  class="add-mor2"><img src="./Images/reset.png" alt="reset" width="100px" height="100px" class="add-mor"></button>
                 </div>`;
                 html += aele;
                 break;
@@ -59,8 +61,17 @@ function weathers(){
             });
         }
     
-        document.querySelector('.add-mor').addEventListener("click", () => {
+        document.querySelector('.add-more').addEventListener("click", () => {
             addByDefault();
+            updateHTML();
+        });
+
+        document.querySelector('.add-mor1').addEventListener("click", () => {
+            deleteLast();
+            updateHTML();
+        });
+        document.querySelector('.add-mor2').addEventListener("click", () => {
+            resetcards();
             updateHTML();
         });
 

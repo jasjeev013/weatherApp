@@ -107,6 +107,7 @@ body {
     font-size: 25px;
     writing-mode: vertical-lr;
     text-decoration: underline;
+    
 }
 
 .windSpeed{
@@ -137,11 +138,30 @@ body {
     border: none;
     align-items: center;
     justify-content: center;
-    margin-top: 30%;
+    margin-top: 20%;
 }
 .add-more{
-    margin-top: 50%;
+    margin-top: 15%;
     text-align: center;
     cursor: pointer;
+    background:none;
+    border: none;
+
+}
+.add-mor1{
+    margin-top: 15%;
+    text-align: center;
+    cursor: pointer;
+    background:none;
+    border: none;
+
+}
+.add-mor2{
+    margin-top: 15%;
+    text-align: center;
+    cursor: pointer;
+    background:none;
+    border: none;
+
 }
   
