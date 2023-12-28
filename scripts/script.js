@@ -1,4 +1,5 @@
 import { cards,updatesCart,addByDefault,deleteLast,resetcards} from "../Data/cards.js";
+import { weatherS } from "../Data/weather.js";
 
 const apikey = "2ec773174354f87c17f24f022529afcd";
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric";
@@ -28,11 +29,20 @@ function weathers(){
                 html += aele;
                 break;
             }
+            let weatherSrc='./Images/sunny.png';
+            for (let j = 0; j < weatherS.length; j++) {
+                const element = weatherS[j];
+                if(element.weather == cards[i].weather.toLowerCase()){
+                    weatherSrc = element.src;
+                }
+                
+            }
+
             let element =`
             <div class="item">
                 <input type="text" class="inputs" data-index-id="${i}" placeholder="Enter City...">
                 <button class="search"><img src="./Images/search.png" alt="" width="20px" height="18px"></button>
-                <img src="./Images/sunny.png" alt="Sunny" width="90px" height="90px" class="weather-img">
+                <img src="${weatherSrc}" alt="Sunny" width="90px" height="90px" class="weather-img">
                 <div>
                     <h1 class="temp">${cards[i].temp}°C </h1>
                     <h4 class="city">${cards[i].city}</h4>
