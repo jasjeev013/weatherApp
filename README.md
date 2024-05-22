@@ -13,7 +13,7 @@ WeatherApp is a web application that provides weather information for different 
 - Responsive design for optimal viewing on different devices
 
 ## Installation
-1. Clone the repository: `git clone https://github.com/your-username/weatherApp.git`
+1. Clone the repository: `git clone https://github.com/jasjeev013/weatherApp.git`
 2. Navigate to the project directory: `cd weatherApp`
 3. Install dependencies: `npm install`
 4. Start the application: `npm start`
